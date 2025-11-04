@@ -128,6 +128,12 @@ public class curriculum {
 		int score = 80;
 		score = 80 + 20;
 		System.out.println("最終スコア：" + score);
+		
+		
+		//課題Q8
+		double price = 99.99;
+		price = (int)price;
+		System.out.println("整数価格：" + price);
 	}
 
 }
