@@ -104,6 +104,8 @@ public class curriculum {
 		int tenForSubtraction = 10;
 		int hundredForSubtraction = 100;
 		System.out.println( tenForSubtraction - hundredForSubtraction);
+		//ここまでがQ3
+		
 		
 	}
 
