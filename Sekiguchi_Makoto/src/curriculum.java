@@ -147,11 +147,18 @@ public class curriculum {
 		String str_Q10 = String.valueOf(num_Q10);
 		System.out.println("得点：" + str_Q10 + "点");
 		
-		
-		//Q11
+//boolean型による真偽の判断		
+		//Q11boolean型を用いてtrue,falseを判断してもらう
 		int a_Q11 = 10;
 		int b_Q11 = 20;
 		boolean result = a_Q11 < b_Q11;
+		System.out.println(result);
+		
+		
+		//Q12三項演算子で真偽の判断に応じた２通りの出力ができる
+		int x = 15;
+		//間違え例：x > 10 ? System.out.println("OK") : System.out.println("NG");
+		String result_Q12 = (x > 10) ? "OK": "NG";
 		System.out.println(result);
 	}
 
