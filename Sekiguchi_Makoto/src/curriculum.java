@@ -115,6 +115,13 @@ public class curriculum {
 		//課題Q5
 		int age2 = 25;
 		System.out.println("年齢：" + age2 + "歳");
+		
+		
+		//課題Q6
+		int num_1 = 10;
+		int num_2 = 5;
+		int sum1 = num_1 + num_2;
+		System.out.println(sum1);
 	}
 
 }
