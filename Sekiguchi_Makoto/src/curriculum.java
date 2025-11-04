@@ -122,6 +122,12 @@ public class curriculum {
 		int num_2 = 5;
 		int sum1 = num_1 + num_2;
 		System.out.println(sum1);
+		
+		
+		//課題Q7
+		int score = 80;
+		score = 80 + 20;
+		System.out.println("最終スコア：" + score);
 	}
 
 }
