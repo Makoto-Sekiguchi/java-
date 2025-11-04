@@ -104,11 +104,17 @@ public class curriculum {
 		int tenForSubtraction = 10;
 		int hundredForSubtraction = 100;
 		System.out.println( tenForSubtraction - hundredForSubtraction);
-		//ここまでがQ3
+		
+		
 		
 		//課題Q4
 		String nameYamada = "山田太郎";
 		System.out.println("こんにちは、" + nameYamada + "さん！");
+		
+		
+		//課題Q5
+		int age2 = 25;
+		System.out.println("年齢：" + age2 + "歳");
 	}
 
 }
