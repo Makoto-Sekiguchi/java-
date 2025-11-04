@@ -124,12 +124,12 @@ public class curriculum {
 		System.out.println(sum1);
 		
 		
-		//課題Q7変数に
+		//課題Q7
 		int score = 80;
 		score = score + 20;
 		System.out.println("最終スコア：" + score);
 		
-		
+//型変換		
 		//課題Q8浮動小数点型を整数型に変換する方法
 		double price = 99.99;
 		price = (int)price;
@@ -138,10 +138,14 @@ public class curriculum {
 		
 		//課題Q9文字列型を整数型へ変換する方法
 		String numStr = "123";
-		int num = Integer.parseInt(numStr) + 10;
+		int num = Integer.parseInt(numStr) + 10;//numStrを整数型に変換したものに10を足し、それを整数型の変数numに保存するという意味。
 		System.out.println("変換後の値：" + num);
 		
 		
+		//課題Q10整数型を文字列に変換する方法
+		int num_10 = 50;
+		String str_10 = String.valueOf(num_10);
+		System.out.println("得点：" + str_10 + "点");
 	}
 
 }
