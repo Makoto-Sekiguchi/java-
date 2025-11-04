@@ -124,16 +124,24 @@ public class curriculum {
 		System.out.println(sum1);
 		
 		
-		//課題Q7
+		//課題Q7変数に
 		int score = 80;
-		score = 80 + 20;
+		score = score + 20;
 		System.out.println("最終スコア：" + score);
 		
 		
-		//課題Q8
+		//課題Q8浮動小数点型を整数型に変換する方法
 		double price = 99.99;
 		price = (int)price;
 		System.out.println("整数価格：" + price);
+		
+		
+		//課題Q9文字列型を整数型へ変換する方法
+		String numStr = "123";
+		int num = Integer.parseInt(numStr) + 10;
+		System.out.println("変換後の値：" + num);
+		
+		
 	}
 
 }
