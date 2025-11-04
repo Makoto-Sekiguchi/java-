@@ -69,7 +69,41 @@ public class curriculum {
 		boolean booleanNum = false;//boolean型はtrue,falseを使うときに用いる。
 		
 		
-		//javaレッスン
+		//java課題Q3
+		
+		//11110を出力
+		int num3 = 11110;
+		System.out.println(num3);
+		//20を出力
+		int num4 = 20;
+		System.out.println(num4);
+		//aハローtrueを出力
+		char charNum = 'a';
+		String stringNum = "ハロー";
+		boolean booleanNum2 = true;
+		System.out.print(charNum);
+		System.out.print(stringNum);
+		System.out.println(booleanNum2);
+		//11130の数字をすべて足して出力
+		int sum = 1;
+		int sum2 = 1;
+		int sum3 = 1;
+		int sum4 = 3;
+		int sum5 = 0;
+		System.out.println(sum + sum2 + sum3 + sum4 + sum5);
+		//小数点以外の数字をすべてかけて出力
+		double doubleNum3 = 1.15;
+		int ten = 10;
+		doubleNum3 = (int)doubleNum3;
+		System.out.println(doubleNum3 + ten);
+		//10.5割る100の結果を出力
+		double tenPointFive = 10.5;
+		int hundred = 100;
+		System.out.println(tenPointFive / hundred);
+		//-90を10-100で出力
+		int tenForSubtraction = 10;
+		int hundredForSubtraction = 100;
+		System.out.println( tenForSubtraction - hundredForSubtraction);
 		
 	}
 
