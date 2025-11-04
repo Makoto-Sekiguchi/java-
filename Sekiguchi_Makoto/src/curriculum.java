@@ -106,7 +106,9 @@ public class curriculum {
 		System.out.println( tenForSubtraction - hundredForSubtraction);
 		//ここまでがQ3
 		
-		
+		//課題Q4
+		String nameYamada = "山田太郎";
+		System.out.println("こんにちは、" + nameYamada + "さん！");
 	}
 
 }
