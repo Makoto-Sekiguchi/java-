@@ -143,9 +143,16 @@ public class curriculum {
 		
 		
 		//課題Q10整数型を文字列に変換する方法
-		int num_10 = 50;
-		String str_10 = String.valueOf(num_10);
-		System.out.println("得点：" + str_10 + "点");
+		int num_Q10 = 50;
+		String str_Q10 = String.valueOf(num_Q10);
+		System.out.println("得点：" + str_Q10 + "点");
+		
+		
+		//Q11
+		int a_Q11 = 10;
+		int b_Q11 = 20;
+		boolean result = a_Q11 < b_Q11;
+		System.out.println(result);
 	}
 
 }
