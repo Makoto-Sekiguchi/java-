@@ -157,9 +157,16 @@ public class curriculum {
 		
 		//Q12三項演算子で真偽の判断に応じた２通りの出力ができる
 		int x = 15;
-		//間違え例：x > 10 ? System.out.println("OK") : System.out.println("NG");
 		String result_Q12 = (x > 10) ? "OK": "NG";
 		System.out.println(result);
+		//間違え例：x > 10 ? System.out.println("OK") : System.out.println("NG");
+		
+		
+		//Q13
+		String java_Q13 = "java";
+		java_Q13 = "python";
+		System.out.println("わたしは" + java_Q13 + "が大好きです。" + java_Q13 + "は楽しい！");
+		
 	}
 
 }
