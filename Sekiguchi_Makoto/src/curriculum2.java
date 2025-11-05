@@ -12,9 +12,45 @@ public class curriculum2 extends curriculum {
 	 */
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
+		//Q1if文による条件分岐。falseなら出力さえない
 		int score = 75;
 		if (score >= 60) {
 			System.out.println("合格です！");
 	     }
+		//Q2条件応じて出力内容を変える方法false時の出力が可能。具体的な区間があるので三項演算子やswitch文の適用はできない？
+		int age = 25;
+		if (age >= 20) {
+			System.out.println("適正年齢です");
+			}else if (age <= 30) {
+				System.out.println("対象外です");
+			}
+		
+		//Q3if-elseif-else文で複数の条件に応じた出力内容を決める。具体的な区間があるので三項演算子やswitch文の適用はできない？
+		int age_Q3 = 18;
+		if (age_Q3 >= 20) {
+			System.out.println("成人です");
+			} else if (age_Q3 >= 13) {
+				System.out.println("ティーンエイジャーです");
+			} else if (age_Q3 <= 19) {
+				System.out.println("ティーンエイジャーです");
+			} else {System.out.println("子供です");
+			}
+		
+		//Q4大事三項演算子で最大値の出力とMath.maxを用いた最大値の出力
+		int x = 30;
+		int y = 15;
+		int z = 50;
+		int max = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
+		System.out.println(max);
+//		int max2 = Math.max(x, Math.max(y, z));
+//		System.out.println(max2);
+		
+		//Q5
+		int num = 5;
+		if (num > 0) {
+			System.out.println("正の数です");
+		}else if (num == 0) {
+			System.out.println("0です");
+		} else {System.out.println("負の数です");}
 	}
 }
