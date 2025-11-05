@@ -70,5 +70,20 @@ public class curriculum2 extends curriculum {
 		 System.out.println(value);*/
 		
 		//Q7
+		int score_Q7 = 40;
+		if (score_Q7 >= 90) {System.out.println("優");
+		} else if (score_Q7 >= 70) {System.out.println("良");
+		} else if (score_Q7 >= 50) {System.out.println("可");
+		} else {System.out.println("不可");
+		}
+//		if (score_Q7 >= 90) {
+//			System.out.println("優");
+//		} else if (score_Q7 <= 89) {
+//			System.out.println("良");
+//		} else if (score_Q7 <= 69) {
+//			System.out.println("可");
+//		} else if (score_Q7 < 50){
+//			System.out.println("不可");
+//		}
 	}
 }
