@@ -3,6 +3,7 @@ public class curriculum {
 
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
+		
 		System.out.println("Hello World");
 		
 		//自己紹介
@@ -74,6 +75,7 @@ public class curriculum {
 		//11110を出力
 		int num3 = 11110;
 		System.out.println(num3);
+		//System.out.println(longNum + intNum + shortNum + byteNum);
 		//20を出力
 		int num4 = 20;
 		System.out.println(num4);
@@ -136,13 +138,13 @@ public class curriculum {
 		System.out.println("整数価格：" + price);
 		
 		
-		//課題Q9文字列型を整数型へ変換する方法
+		//大事課題Q9文字列型を整数型へ変換する方法
 		String numStr = "123";
 		int num = Integer.parseInt(numStr) + 10;//numStrを整数型に変換したものに10を足し、それを整数型の変数numに保存するという意味。
 		System.out.println("変換後の値：" + num);
 		
 		
-		//課題Q10整数型を文字列に変換する方法
+		//大事課題Q10整数型を文字列に変換する方法
 		int num_Q10 = 50;
 		String str_Q10 = String.valueOf(num_Q10);
 		System.out.println("得点：" + str_Q10 + "点");
@@ -158,15 +160,54 @@ public class curriculum {
 		//Q12三項演算子で真偽の判断に応じた２通りの出力ができる
 		int x = 15;
 		String result_Q12 = (x > 10) ? "OK": "NG";
-		System.out.println(result);
+		System.out.println(result_Q12);
 		//間違え例：x > 10 ? System.out.println("OK") : System.out.println("NG");
 		
 		
-		//Q13
-		String java_Q13 = "java";
-		java_Q13 = "python";
-		System.out.println("わたしは" + java_Q13 + "が大好きです。" + java_Q13 + "は楽しい！");
+		//Q13大事replaceを用いた部分的な文字列の変更
 		
+		
+		
+		String originalText ="私はjavaがだいすきです。javaは楽しい！";
+		String newStr = originalText.replace("java", "python");
+		System.out.println(newStr);
+		
+		System.out.println("mainメソッド終了");
+		
+			
+			
+	//復習　
+		//インクリメント
+		/*前置インクリメントは++aで、現在の値に１足したものが実行される
+		後置インクリメントはa++で、現在の値を実行した後に１が足されて使われる。*/
+//		int a = 10;
+//		int b = 10;
+//		int sumBA = a + b++;
+//		System.out.println(sumBA);
+//		int sumAB = ++a + b;//a=11+b=11前置インクのaだから１１に、後置インクのbである。sumBAで１０を実行しているのでここのbは１１になる。
+//		System.out.println(sumAB);
+		
+		//条件式の条件
+//		条件式になるのは代入式（＝）と四則演算子（＋－＊／）以外の演算子とtrueとfalse！
+//		const = 300 * 1.05:代入式出会って条件式ではない。=が目印
+//		3:ただの数字
+//		age != 30:代入式でも四則演算子でもない。
+//		true：条件式のtrue,falseに該当する。
+//		b + 5 < 20：代入式でも四則演算子でもないので条件式。			 
+//		isNumberic = true：=があり代入式に該当するため不適。
+			
+		//整数同士の割り算をfloat型に代入すると
+//		float ans = 7 / 6f;
+//		System.out.println(ans);//これだと小数点の計算まで行ってくれる。
+//		float ans2 = 7 / 6;
+//		System.out.println(ans2);//これだと整数同士の割り算がfloat型に代入されてる判定なので小数点付きの整数値が出力される。
 	}
-
+	
+	
+			
+	
 }
+
+
+
+	
