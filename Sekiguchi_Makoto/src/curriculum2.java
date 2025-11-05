@@ -19,21 +19,27 @@ public class curriculum2 extends curriculum {
 	     }
 		//Q2条件応じて出力内容を変える方法false時の出力が可能。具体的な区間があるので三項演算子やswitch文の適用はできない？
 		int age = 25;
-		if (age >= 20) {
+		if (age >= 20 && age >= 30) {
 			System.out.println("適正年齢です");
-			}else if (age <= 30) {
-				System.out.println("対象外です");
-			}
+		} else {
+			System.out.println("対象外です");
+		}
+//		if (age >= 20) {
+//			System.out.println("適正年齢です");
+//			}else if (age <= 30) {
+//				System.out.println("適正年齢です");
+//			} else {System.out.println("対象外です");
+//			}
 		
 		//Q3if-elseif-else文で複数の条件に応じた出力内容を決める。具体的な区間があるので三項演算子やswitch文の適用はできない？
-		int age_Q3 = 18;
+		
+		int age_Q3 = 20;
 		if (age_Q3 >= 20) {
 			System.out.println("成人です");
-			} else if (age_Q3 >= 13) {
+			} else if (age_Q3 >= 13 && age_Q3 <= 19) {
 				System.out.println("ティーンエイジャーです");
-			} else if (age_Q3 <= 19) {
-				System.out.println("ティーンエイジャーです");
-			} else {System.out.println("子供です");
+			} else {
+				System.out.println("子供です");
 			}
 		
 		//Q4大事三項演算子で最大値の出力とMath.maxを用いた最大値の出力
@@ -69,13 +75,14 @@ public class curriculum2 extends curriculum {
 		 (value % 2 == 0) ? "偶数です" : "奇数です"
 		 System.out.println(value);*/
 		
-		//Q7
+		//Q7大事区間によって異なる出力（Q3と同じ）
 		int score_Q7 = 40;
 		if (score_Q7 >= 90) {System.out.println("優");
 		} else if (score_Q7 >= 70) {System.out.println("良");
 		} else if (score_Q7 >= 50) {System.out.println("可");
 		} else {System.out.println("不可");
 		}
+//		間違え
 //		if (score_Q7 >= 90) {
 //			System.out.println("優");
 //		} else if (score_Q7 <= 89) {
@@ -85,5 +92,64 @@ public class curriculum2 extends curriculum {
 //		} else if (score_Q7 < 50){
 //			System.out.println("不可");
 //		}
+		
+		
+		//Q8大事nullと空欄が入力されたときにエラーを表示し、そうでないときは入力内容を表示してくれる
+		String input = "";
+		if (input == null || input.equals("")) {
+			System.out.println("入力が無効です");
+		
+		} else {
+			System.out.println("入力された内容は" + input + "です");
+			
+		}
+		
+		
+		
+		//Q9switch文で単一のケースに応じた出力（区間のある条件に応じた出力はif文！）
+		
+		int day = 1;
+		
+		switch (day) {
+		 case 1:
+			System.out.println("月曜日");
+			break;
+		 case 2:
+				System.out.println("火曜日");
+				break;
+		 case 3:
+				System.out.println("水曜日");
+				break;
+		 case 4:
+				System.out.println("木曜日");
+				break;
+		 case 5:
+				System.out.println("金曜日");
+				break;
+		 case 6:
+				System.out.println("土曜日");
+				break;
+		 case 7:
+				System.out.println("日曜日");
+				break;		
+		}
+		//Q10
+		int month = 15;
+		switch (month) {
+		case 12, 1, 2:
+			System.out.println("冬");
+			break;
+		case 3, 4, 5:
+			System.out.println("春");
+			break;
+		case 6, 7, 8:
+			System.out.println("夏");
+			break;
+		case 9, 10, 11:
+			System.out.println("秋");
+			break;
+		default :
+			System.out.println("無効な月です");
+		}
 	}
 }
