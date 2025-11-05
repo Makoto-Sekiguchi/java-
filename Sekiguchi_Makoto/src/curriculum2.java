@@ -45,12 +45,30 @@ public class curriculum2 extends curriculum {
 //		int max2 = Math.max(x, Math.max(y, z));
 //		System.out.println(max2);
 		
-		//Q5
+		//Q5if文と三項演算子の２種類の書き方
 		int num = 5;
 		if (num > 0) {
 			System.out.println("正の数です");
 		}else if (num == 0) {
 			System.out.println("0です");
 		} else {System.out.println("負の数です");}
+		/*三項演算子だと以下のコードになる。
+		 int num = 5;
+		 (num > 0) ? "正の数です" : ((num == 0) ? "0です" : "負の数です");
+		  System.out.println(num);*/
+		
+		//Q6if文と三項演算子の２種類の書き方
+		int value = 2;
+		if (value % 2 == 0) {
+			System.out.println("偶数です");
+		} else {
+			System.out.println("奇数です");
+		}
+		/*三項演算子だと以下のコードになる
+		 int value = 2;
+		 (value % 2 == 0) ? "偶数です" : "奇数です"
+		 System.out.println(value);*/
+		
+		//Q7
 	}
 }
