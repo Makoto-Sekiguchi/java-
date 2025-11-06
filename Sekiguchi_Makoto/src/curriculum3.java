@@ -1,6 +1,7 @@
 /**
  * 
  */
+import java.util.Random;
 import java.util.Scanner;
 /**
  * 
@@ -72,7 +73,7 @@ public class curriculum3 extends curriculum {
 		int Q7_i = 2;
 		while (Q7_i <= 20) {
 			System.out.print(Q7_i + " ");
-				Q7_i += 2;//偶数表記の定番はこれ！if文が挿入できないときはcontinueも使えないので２ずつ増える加算代入を使うよ！
+				Q7_i += 2;//偶数表記の定番はこれ！加算代入ではif文が挿入できず、continueも使えない。
 		}
 		System.out.println();
 		
@@ -102,43 +103,75 @@ public class curriculum3 extends curriculum {
 		}
 
 //Q10大事
-		Scanner sc = new Scanner(System.in);
-		System.out.println("数値を入力してください。");
-		
-		
-		while(true) {
-			int num_Q10 = sc.nextInt();
-			if(num_Q10 == 0) {
-				System.out.println("0が入力されたので終了しました。");
-				break;
-			}
-			System.out.println("あなたが入力した数字は" + num_Q10 + "です。0が入力されるまで繰り返します");
-		}
-		sc.close();
-		
-//Q11
-//		int [][] a = new int[9][9];
+//		Scanner sc = new Scanner(System.in);
+//		System.out.println("数値を入力してください。");
 //		
-//		for (int m = 1 ; m <= a.length ; m++) {
-//			for(int n = 1 ; n <= a[m].length ; n++) {
-//				a[m][n] = m * n;
+//		while(true) {
+//			int num_Q10 = sc.nextInt();
+//			if(num_Q10 == 0) {
+//				System.out.println("0が入力されたので終了しました。");
+//				break;
 //			}
+//			System.out.println("あなたが入力した数字は" + num_Q10 + "です。0が入力されるまで繰り返します");
 //		}
-//		
-//		for (int m = 1 ; m <= a.length ; m++) {
-//			for(int n = 1 ; n <= a[m].length ; n++) {
-//				System.out.println(a[m][n]);
-//			}
-//			System.out.println();
-//		}
+//		sc.close();
+		
+//Q11大事各項目（a,b）が対応する掛け算とそのフォーマット形式での出力
+
 		for (int a = 1 ; a <= 9 ; a++) {
 			for (int b = 1 ; b <= 9 ; b++) {
 				int result = a * b;
-				System.out.println(result);
+				System.out.printf("%02d * %02d = %02d", a, b, result);//フォーマット形式での出力
+				if (b < 9) {//b<=9だと、9の段の掛け算の右側（一番端）にも||が入ってしまう。
+					System.out.print("||");
+				}
 			}
+			System.out.println();//a=9改行切り返しをしたいのでここで改行コードを書けばよいとわかる。
 		}
-		
-		
+
+//Q12
+	Scanner scanner = new Scanner(System.in);
+	System.out.println("調べたい在庫は？");
+	Random random = new Random();
+	
+	int stockTv = random.nextInt(12);
+	int stockDisplay = 11 - stockTv;
+	int stockPc = random.nextInt(12);
+	int stockAc = random.nextInt(12);
+	int stockRefridge = random.nextInt(12);
+	int stockWashing = random.nextInt(12);
+	
+	
+	String input1 = scanner.nextLine().trim();//入力文字の前後の空白を削除してくれる
+	String normalizedInput = input1.replaceAll(" ", "").toLowerCase();//入力文字列の標準化
+	
+	switch(input1) {
+	case "　", " ":
+		System.out.println("商品名が入力されていません。");
+		break;
+	case "パソコン":
+		System.out.println("パソコンの残り台数は" + stockPc + "です。");
+		break;
+	case "エアコン":
+		System.out.println("エアコンの残り台数は" + stockAc + "です。");
+		break;
+	case "冷蔵庫":
+		System.out.println("冷蔵庫の残り台数は" + stockRefridge + "です。");
+		break;
+	case "洗濯機":
+		System.out.println("洗濯機の残り台数は" + stockWashing + "です。");
+		break;
+	case "テレビ":
+		System.out.println("テレビの残り台数は" + stockTv + "です。ディスプレイの在庫は" + stockDisplay + "です。");
+		break;
+	case "ディスプレイ":
+		System.out.println("ディスプレイの残り台数は" + stockDisplay + "です。");
+		break;	
+	default :
+		System.out.println("");
+		break;
+	}
+	scanner.close();
 		
 	}
 
@@ -192,4 +225,16 @@ public class curriculum3 extends curriculum {
 //				break;
 //			}
 //			System.out.println("あなたが入力した数字は" + num_Q10 + "です。0が入力されるまで繰り返します");
+//		}
+//Q11大事
+//
+//		for (int a = 1 ; a <= 9 ; a++) {
+//			for (int b = 1 ; b <= 9 ; b++) {
+//				int result = a * b;
+//				System.out.printf("%02d * %02d = %02d", a, b, result);//フォーマット形式での出力
+//				if (b < 9) {//b<=9だと、9の段の掛け算の右側（一番端）にも||が入ってしまう。
+//					System.out.print("||");
+//				}
+//			}
+//			System.out.println();//a=9改行切り返しをしたいのでここで改行コードを書けばよいとわかる。
 //		}
