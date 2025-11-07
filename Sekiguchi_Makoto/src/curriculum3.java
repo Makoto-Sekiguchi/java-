@@ -1,12 +1,8 @@
-/**
- * 
- */
+
 import java.util.Random;
 import java.util.Scanner;
-/**
- * 
- */
-public class curriculum3 extends curriculum {
+
+public class curriculum3{
 
 	/**
 	 * @param args
@@ -76,6 +72,8 @@ public class curriculum3 extends curriculum {
 				Q7_i += 2;//偶数表記の定番はこれ！加算代入ではif文が挿入できず、continueも使えない。
 		}
 		System.out.println();
+		System.out.println("Q7終了");
+		System.out.println();
 		
 //Q8
 		int Q8_i = 10;
@@ -83,7 +81,7 @@ public class curriculum3 extends curriculum {
 			System.out.println(Q8_i);
 			--Q8_i;//前置デクリメントによって、現在の値Q8_i = 10を返してから順に引かれていくことを意味する。
 		}
-		System.out.println();
+		System.out.println("Q8終了");
 		
 //Q9１～１００までの合計を出力
 //for.ver.		int sum_Q4 = 0;
@@ -92,15 +90,18 @@ public class curriculum3 extends curriculum {
 //			System.out.println(sum_Q4);//加算代入されたものを出力していく。
 //		}
 //while.ver.
-		int Q9_i = 1;
-		int sum = 1;
-		while(Q9_i <= 100) {
+		int Q9_i = 0;
+		int sum = 0;
+		while(Q9_i < 100) {
 			++Q9_i;
 			sum += Q9_i;
-			if (sum == 5050) {
-				System.out.println(sum);
-			}
+			System.out.println(sum);
 		}
+		if (sum == 5050) {
+			System.out.println(sum);
+		}
+		System.out.println("Q9終了");
+		System.out.println();
 
 //Q10大事
 //		Scanner sc = new Scanner(System.in);
@@ -143,15 +144,18 @@ public class curriculum3 extends curriculum {
 	int stockRefridge = random.nextInt(12);//0～11の幅のランダムな数字をstockRefridge変数に格納
 	int stockWashing = random.nextInt(12);//0～11の幅のランダムな数字をstockWashing変数に格納
 	int stockVapor = random.nextInt(12);
+	int stockFan = random.nextInt(12);
 	
 	
-	String input1 = scanner.nextLine();//ユーザーが誤って入力した前後の空白を削除してくれる
-	String normalizedInput = input1.replaceAll(" ", "").toLowerCase();
-/*input1で入力を読み込んだ文字に対して、標準化処理を行い、ユーザーの入力を統一された形式に改めて変更した。
+	String input1 = scanner.nextLine().trim();//ユーザーが誤って入力した前後の空白を削除してくれる
+/*＠＠＠＠＠
+不要な箇所145～149：String normalizedInput = input1.replaceAll(" ", "").toLowerCase();ユーザー入力は日本語のためここは不要！
+input1で入力を読み込んだ文字に対して、標準化処理を行い、ユーザーの入力を統一された形式に改めて変更した。
 具体的には、input1で読み込んだ文字に対して.replaceAll(" ", "")によって、誤入力されたスペースを除去し、
 .toLowerCase()によって、PcやpC,PC,pcといった入力内容がすべて小文字として認識されるようになる。
-つまり、すべてpcとして統一してくれるということ！*/
-	String [] requestedItems = input1.split("、");
+つまり、すべてpcとして統一してくれるということ！
+＠＠＠＠＠*/
+	String [] requestedItems = input1.split("、");//入力された内容(input1)に対して”、”を付けることで複数の入力を可能にする
 	
 	for (String itemInput : requestedItems) {
 //	
@@ -173,19 +177,23 @@ public class curriculum3 extends curriculum {
 	case "洗濯機":
 		System.out.println("洗濯機の残り台数は" + stockWashing + "です。");
 		break;
-	case "テレビ":
+	case "テレビ", "ディスプレイ":
 		System.out.println("テレビの残り台数は" + stockTv + "です。ディスプレイの在庫は" + stockDisplay + "です。");
 		break;
 	case "加湿器" :
-		System.out.println("テレビの残り台数は" + stockVapor + "です。");
-		break;	
+		System.out.println("加湿器の残り台数は" + stockVapor + "です。");
+		break;
+	case "扇風機" :
+		System.out.println("扇風機の残り台数は" + stockFan + "です。");
+		break;
 	default :
 		System.out.println("存在しません");
 		break;
 	}
 	
-	scanner.close();
+	
 	}
+	scanner.close();
 	}
 
 }
@@ -251,46 +259,3 @@ public class curriculum3 extends curriculum {
 //			}
 //			System.out.println();//a=9改行切り返しをしたいのでここで改行コードを書けばよいとわかる。
 //		}
-////Q12
-//	Scanner scanner = new Scanner(System.in);
-//	System.out.println("調べたい在庫は？");
-//	Random random = new Random();
-//	
-//	int stockTv = random.nextInt(12);
-//	int stockDisplay = 11 - stockTv;
-//	int stockPc = random.nextInt(12);
-//	int stockAc = random.nextInt(12);
-//	int stockRefridge = random.nextInt(12);
-//	int stockWashing = random.nextInt(12);
-//	
-//	
-//	String input1 = scanner.nextLine().trim();//入力文字の前後の空白を削除してくれる
-//	String normalizedInput = input1.replaceAll(" ", "").toLowerCase();//入力文字列の標準化
-//	
-//	switch(input1) {
-//	case "　", " ":
-//		System.out.println("商品名が入力されていません。");
-//		break;
-//	case "パソコン":
-//		System.out.println("パソコンの残り台数は" + stockPc + "です。");
-//		break;
-//	case "エアコン":
-//		System.out.println("エアコンの残り台数は" + stockAc + "です。");
-//		break;
-//	case "冷蔵庫":
-//		System.out.println("冷蔵庫の残り台数は" + stockRefridge + "です。");
-//		break;
-//	case "洗濯機":
-//		System.out.println("洗濯機の残り台数は" + stockWashing + "です。");
-//		break;
-//	case "テレビ":
-//		System.out.println("テレビの残り台数は" + stockTv + "です。ディスプレイの在庫は" + stockDisplay + "です。");
-//		break;
-//	case "ディスプレイ":
-//		System.out.println("ディスプレイの残り台数は" + stockDisplay + "です。");
-//		break;	
-//	default :
-//		System.out.println("");
-//		break;
-//	}
-//	scanner.close();
