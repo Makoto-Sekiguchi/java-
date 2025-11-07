@@ -130,9 +130,10 @@ public class curriculum3 extends curriculum {
 		}
 
 //Q12
-	Scanner scanner = new Scanner(System.in);//キーボード入力の受付
+	//目標：キーボード入力の受付と読み込み(134と146)は必ずセット！ランダム数字の生成とそれを適用するint型変数もセット！(136と138～143)
+	Scanner scanner = new Scanner(System.in);//キーボード入力の受付　>　scanner.nextLine().trim()と即連想する！
 	System.out.println("調べたい在庫は？");
-	Random random = new Random();//ランダムな数字の生成の受付
+	Random random = new Random();//ランダムな数字の生成の受付 > random.nextInt(数字の幅)とそれを格納する変数と即連想する！
 	
 	int stockTv = random.nextInt(12);//0～11の幅のランダムな数字をstockTv変数に格納
 	int stockDisplay = 11 - stockTv;//ディスプレイの在庫はstockTvと合わせて１１個にする必要がある。
@@ -142,10 +143,10 @@ public class curriculum3 extends curriculum {
 	int stockWashing = random.nextInt(12);//0～11の幅のランダムな数字をstockWashing変数に格納
 	
 	
-	String input1 = scanner.nextLine().trim();//入力文字の前後の空白を削除してくれる
+	String input1 = scanner.nextLine().trim();//ユーザーが誤って入力した前後の空白を削除してくれる
 	String normalizedInput = input1.replaceAll(" ", "").toLowerCase();//入力文字列の標準化(=)
 	
-	switch(input1) {
+	switch(input1) {//scanner.がついてるinput1変数
 	case "　", " ":
 		System.out.println("商品名が入力されていません。");
 		break;
