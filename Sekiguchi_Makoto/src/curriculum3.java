@@ -24,7 +24,7 @@ public class curriculum3 extends curriculum {
 		for (Q2 = 2 ; Q2 <= 20 ; Q2++) {
 			if (Q2 % 2 != 0) {
 				continue;
-			} else {//偶数時にQ2
+			} else {//偶数時にQ2を出力
 				System.out.println(Q2);
 			}
 			
@@ -120,30 +120,30 @@ public class curriculum3 extends curriculum {
 
 		for (int a = 1 ; a <= 9 ; a++) {
 			for (int b = 1 ; b <= 9 ; b++) {
-				int result = a * b;
-				System.out.printf("%02d * %02d = %02d", a, b, result);//フォーマット形式での出力
+				int result = a * b;//a=1*b=1,a=2*b=2...と続く計算をresult変数に格納する。
+				System.out.printf("%02d * %02d = %2d", a, b, result);//フォーマット形式での出力
 				if (b < 9) {//b<=9だと、9の段の掛け算の右側（一番端）にも||が入ってしまう。
 					System.out.print("||");
 				}
 			}
-			System.out.println();//a=9改行切り返しをしたいのでここで改行コードを書けばよいとわかる。
+		System.out.println();//a=9改行切り返しをしたいのでここで改行コードを書けばよいとわかる。
 		}
 
 //Q12
-	Scanner scanner = new Scanner(System.in);
+	Scanner scanner = new Scanner(System.in);//キーボード入力の受付
 	System.out.println("調べたい在庫は？");
-	Random random = new Random();
+	Random random = new Random();//ランダムな数字の生成の受付
 	
-	int stockTv = random.nextInt(12);
-	int stockDisplay = 11 - stockTv;
-	int stockPc = random.nextInt(12);
-	int stockAc = random.nextInt(12);
-	int stockRefridge = random.nextInt(12);
-	int stockWashing = random.nextInt(12);
+	int stockTv = random.nextInt(12);//0～11の幅のランダムな数字をstockTv変数に格納
+	int stockDisplay = 11 - stockTv;//ディスプレイの在庫はstockTvと合わせて１１個にする必要がある。
+	int stockPc = random.nextInt(12);//0～11の幅のランダムな数字をstockPc変数に格納
+	int stockAc = random.nextInt(12);//0～11の幅のランダムな数字をstockAc変数に格納
+	int stockRefridge = random.nextInt(12);//0～11の幅のランダムな数字をstockRefridge変数に格納
+	int stockWashing = random.nextInt(12);//0～11の幅のランダムな数字をstockWashing変数に格納
 	
 	
 	String input1 = scanner.nextLine().trim();//入力文字の前後の空白を削除してくれる
-	String normalizedInput = input1.replaceAll(" ", "").toLowerCase();//入力文字列の標準化
+	String normalizedInput = input1.replaceAll(" ", "").toLowerCase();//入力文字列の標準化(=)
 	
 	switch(input1) {
 	case "　", " ":
@@ -238,3 +238,46 @@ public class curriculum3 extends curriculum {
 //			}
 //			System.out.println();//a=9改行切り返しをしたいのでここで改行コードを書けばよいとわかる。
 //		}
+////Q12
+//	Scanner scanner = new Scanner(System.in);
+//	System.out.println("調べたい在庫は？");
+//	Random random = new Random();
+//	
+//	int stockTv = random.nextInt(12);
+//	int stockDisplay = 11 - stockTv;
+//	int stockPc = random.nextInt(12);
+//	int stockAc = random.nextInt(12);
+//	int stockRefridge = random.nextInt(12);
+//	int stockWashing = random.nextInt(12);
+//	
+//	
+//	String input1 = scanner.nextLine().trim();//入力文字の前後の空白を削除してくれる
+//	String normalizedInput = input1.replaceAll(" ", "").toLowerCase();//入力文字列の標準化
+//	
+//	switch(input1) {
+//	case "　", " ":
+//		System.out.println("商品名が入力されていません。");
+//		break;
+//	case "パソコン":
+//		System.out.println("パソコンの残り台数は" + stockPc + "です。");
+//		break;
+//	case "エアコン":
+//		System.out.println("エアコンの残り台数は" + stockAc + "です。");
+//		break;
+//	case "冷蔵庫":
+//		System.out.println("冷蔵庫の残り台数は" + stockRefridge + "です。");
+//		break;
+//	case "洗濯機":
+//		System.out.println("洗濯機の残り台数は" + stockWashing + "です。");
+//		break;
+//	case "テレビ":
+//		System.out.println("テレビの残り台数は" + stockTv + "です。ディスプレイの在庫は" + stockDisplay + "です。");
+//		break;
+//	case "ディスプレイ":
+//		System.out.println("ディスプレイの残り台数は" + stockDisplay + "です。");
+//		break;	
+//	default :
+//		System.out.println("");
+//		break;
+//	}
+//	scanner.close();
