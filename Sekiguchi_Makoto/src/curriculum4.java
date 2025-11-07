@@ -97,16 +97,16 @@ public class curriculum4 extends curriculum {
 		のみを出力してくれるよ！*/
 		System.out.println("最小値：" + min);
 		System.out.println();
-//Q5
+//Q5配列内を２倍に変更する方法。拡張for文で配列を出力する方法。
 		int [] e_Q5 = {1, 2, 3, 4, 5};
 		
 		for (int i = 0 ; i < e_Q5.length ; i++) {/*変数iはこのあとe_Q5配列に適用させる予定なので、
 			e_Q5[0]を実現するためにi=0から開始する。*/
-			e_Q5[i] *= 2;//e_Q5[i] = e_Q5 * 2と同じ意味。
+			e_Q5[i] *= 2;//e_Q5[i] = e_Q5 * 2と同じ意味。これによってe_Q5配列内の各値が永久に２倍されたことを意味する。
 			//上限４まで順増加する変数iをe_Q5配列に適用し、*= 2によってそれらを2倍することを意味する。
 		   
 		}
-		for (int element : e_Q5) {
+		for (int element : e_Q5) {//拡張for文での出力方法
 			System.out.println(element);
 		}
 		System.out.println();
