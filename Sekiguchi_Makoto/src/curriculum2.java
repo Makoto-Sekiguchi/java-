@@ -1,11 +1,6 @@
-/**
- * 
- */
+import java.util.Scanner;
 
-/**
- * 
- */
-public class curriculum2 extends curriculum {
+public class curriculum2{
 
 	/**
 	 * @param args
@@ -17,9 +12,9 @@ public class curriculum2 extends curriculum {
 		if (score >= 60) {
 			System.out.println("合格です！");
 	     }
-		//Q2条件応じて出力内容を変える方法false時の出力が可能。具体的な区間があるので三項演算子やswitch文の適用はできない？
+		//Q2大事条件応じて出力内容を変える方法false時の出力が可能。具体的な区間があるので三項演算子やswitch文の適用はできない？
 		int age = 25;
-		if (age >= 20 && age >= 30) {
+		if (age >= 20 && age <= 30) {
 			System.out.println("適正年齢です");
 		} else {
 			System.out.println("対象外です");
@@ -33,7 +28,7 @@ public class curriculum2 extends curriculum {
 		
 		//Q3if-elseif-else文で複数の条件に応じた出力内容を決める。具体的な区間があるので三項演算子やswitch文の適用はできない？
 		
-		int age_Q3 = 20;
+		int age_Q3 = 18;
 		if (age_Q3 >= 20) {
 			System.out.println("成人です");
 			} else if (age_Q3 >= 13 && age_Q3 <= 19) {
@@ -95,18 +90,21 @@ public class curriculum2 extends curriculum {
 		
 		
 		//Q8大事nullと空欄が入力されたときにエラーを表示し、そうでないときは入力内容を表示してくれる
-		String input = "";
-		if (input == null || input.equals("")) {
-			System.out.println("入力が無効です");
+		Scanner sc = new Scanner(System.in);
+		String userInput = sc.nextLine().trim();
+		//String normalizedInput = userInput.replaceAll(" ", "").toLowerCase();
+		if (/*normalizedInput*/userInput == null || userInput/*normalizedInput*/.equals("")) {//inputがnullまたは空欄時に、
+			System.out.println("入力が無効です");//このような出力をする。
 		
-		} else {
-			System.out.println("入力された内容は" + input + "です");
+		} else {//inputがnullまたは空欄ではないときに、
+			System.out.println("入力された内容は" + userInput/*normalizedInput*/ + "です");//inputに入っている文字列を出力する。
 			
 		}
+		sc.close();
 		
 		
 		
-		//Q9switch文で単一のケースに応じた出力（区間のある条件に応じた出力はif文！）
+		//Q9switch文で単一のケースに応じた出力（幅の広い区間のある条件に応じた出力はif文！）
 		
 		int day = 1;
 		
@@ -133,7 +131,7 @@ public class curriculum2 extends curriculum {
 				System.out.println("日曜日");
 				break;		
 		}
-		//Q10
+		//Q10switch文で単一のケースに応じた出力内容の変更
 		int month = 15;
 		switch (month) {
 		case 12, 1, 2:
@@ -152,4 +150,48 @@ public class curriculum2 extends curriculum {
 			System.out.println("無効な月です");
 		}
 	}
+
+	private static void toLowerCase() {
+		// TODO 自動生成されたメソッド・スタブ
+		
+	}
 }
+//以下、復習問題
+////Q2大事条件応じて出力内容を変える方法false時の出力が可能。具体的な区間があるので三項演算子やswitch文の適用はできない？
+//		int age = 25;
+//		if (age >= 20 && age >= 30) {
+//			System.out.println("適正年齢です");
+//		} else {
+//			System.out.println("対象外です");
+//		}
+//Q4大事三項演算子で最大値の出力とMath.maxを用いた最大値の出力
+//		int x = 30;
+//		int y = 15;
+//		int z = 50;
+//		int max = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
+//Q7大事区間によって異なる出力（Q3と同じ）
+//		int score_Q7 = 40;
+//		if (score_Q7 >= 90) {System.out.println("優");
+//		} else if (score_Q7 >= 70) {System.out.println("良");
+//		} else if (score_Q7 >= 50) {System.out.println("可");
+//		} else {System.out.println("不可");
+//		}
+//		間違え
+//		if (score_Q7 >= 90) {
+//			System.out.println("優");
+//		} else if (score_Q7 <= 89) {
+//			System.out.println("良");
+//		} else if (score_Q7 <= 69) {
+//			System.out.println("可");
+//		} else if (score_Q7 < 50){
+//			System.out.println("不可");
+//		}
+//Q8大事nullと空欄が入力されたときにエラーを表示し、そうでないときは入力内容を表示してくれる
+//		String input = "";
+//		if (input == null || input.equals("")) {
+//			System.out.println("入力が無効です");
+//		
+//		} else {
+//			System.out.println("入力された内容は" + input + "です");
+//			
+//		}
