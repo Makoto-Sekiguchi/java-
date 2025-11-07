@@ -92,13 +92,13 @@ public class curriculum2{
 		//Q8大事nullと空欄が入力されたときにエラーを表示し、そうでないときは入力内容を表示してくれる
 		Scanner sc = new Scanner(System.in);
 		String userInput = sc.nextLine().trim();
-		//String normalizedInput = userInput.replaceAll(" ", "").toLowerCase();
-		if (/*normalizedInput*/userInput == null || userInput/*normalizedInput*/.equals("")) {//inputがnullまたは空欄時に、
-			System.out.println("入力が無効です");//このような出力をする。
+		String normalizedInput = userInput.replaceAll(" ", "").toLowerCase();
 		
-		} else {//inputがnullまたは空欄ではないときに、
-			System.out.println("入力された内容は" + userInput/*normalizedInput*/ + "です");//inputに入っている文字列を出力する。
-			
+		if (normalizedInput == null || normalizedInput.equals("")) {
+			System.out.println("入力が無効です");
+		
+		} else {
+			System.out.println("入力された内容は" + normalizedInput + "です");
 		}
 		sc.close();
 		
