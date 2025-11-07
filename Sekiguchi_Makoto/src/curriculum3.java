@@ -131,7 +131,8 @@ public class curriculum3 extends curriculum {
 
 //Q12
 	//目標：キーボード入力の受付と読み込み(134と146)は必ずセット！ランダム数字の生成とそれを適用するint型変数もセット！(136と138～143)
-	Scanner scanner = new Scanner(System.in);//キーボード入力の受付　>　scanner.nextLine().trim()と即連想する！
+	Scanner scanner = new Scanner(System.in);/*キーボード入力の受付
+	>　String input = scanner.nextLine().trim()とString normalizedInput = input.replaceAll(" ", "").toLowerCase()と即連想する！*/
 	System.out.println("調べたい在庫は？");
 	Random random = new Random();//ランダムな数字の生成の受付 > random.nextInt(数字の幅)とそれを格納する変数と即連想する！
 	
@@ -141,12 +142,22 @@ public class curriculum3 extends curriculum {
 	int stockAc = random.nextInt(12);//0～11の幅のランダムな数字をstockAc変数に格納
 	int stockRefridge = random.nextInt(12);//0～11の幅のランダムな数字をstockRefridge変数に格納
 	int stockWashing = random.nextInt(12);//0～11の幅のランダムな数字をstockWashing変数に格納
+	int stockVapor = random.nextInt(12);
 	
 	
-	String input1 = scanner.nextLine().trim();//ユーザーが誤って入力した前後の空白を削除してくれる
-	String normalizedInput = input1.replaceAll(" ", "").toLowerCase();//入力文字列の標準化(=)
+	String input1 = scanner.nextLine();//ユーザーが誤って入力した前後の空白を削除してくれる
+	String normalizedInput = input1.replaceAll(" ", "").toLowerCase();
+/*input1で入力を読み込んだ文字に対して、標準化処理を行い、ユーザーの入力を統一された形式に改めて変更した。
+具体的には、input1で読み込んだ文字に対して.replaceAll(" ", "")によって、誤入力されたスペースを除去し、
+.toLowerCase()によって、PcやpC,PC,pcといった入力内容がすべて小文字として認識されるようになる。
+つまり、すべてpcとして統一してくれるということ！*/
+	String [] requestedItems = input1.split("、");
 	
-	switch(input1) {//scanner.がついてるinput1変数
+	for (String itemInput : requestedItems) {
+//	
+//	
+    
+	switch(itemInput) {//scanner.がついてるinput1変数
 	case "　", " ":
 		System.out.println("商品名が入力されていません。");
 		break;
@@ -165,15 +176,16 @@ public class curriculum3 extends curriculum {
 	case "テレビ":
 		System.out.println("テレビの残り台数は" + stockTv + "です。ディスプレイの在庫は" + stockDisplay + "です。");
 		break;
-	case "ディスプレイ":
-		System.out.println("ディスプレイの残り台数は" + stockDisplay + "です。");
+	case "加湿器" :
+		System.out.println("テレビの残り台数は" + stockVapor + "です。");
 		break;	
 	default :
-		System.out.println("");
+		System.out.println("存在しません");
 		break;
 	}
+	
 	scanner.close();
-		
+	}
 	}
 
 }
