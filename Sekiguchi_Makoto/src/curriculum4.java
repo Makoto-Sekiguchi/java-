@@ -41,7 +41,7 @@ public class curriculum4 extends curriculum {
 		}
 		System.out.println();
 		
-//Q3配列の合計値を出力する方法　必要なもの：配列、int sum変数、拡張for文と加算代入
+//Q3大事配列の合計値を出力する方法　必要なもの：配列、int sum変数、拡張for文と加算代入
 		int [] c_Q3 = {3, 5, 7, 9, 11};//配列を用意
 		int sum = 0;//配列の各要素の合計値を格納するsum変数を用意。
 		/*ここが=0でないと、for-each文でのsumでiの合計値のみを入れることができない*/
@@ -68,14 +68,14 @@ public class curriculum4 extends curriculum {
 //			System.out.println();
 //		}
 		
-//Q4配列の最大値と最小値を出力する方法　必要なもの：配列、int max,min変数
+//Q4大事配列の最大値と最小値を出力する方法　必要なもの：配列、int max,min変数
 		int [] d_Q4 = {12, 7, 9, 21, 5, 18};
 		int max = d_Q4[0];//配列の最初の要素を最大値に設定
 		int min = d_Q4[0];//配列の最初の要素を最小値に設定
 		
-		for (int i  = 1 ; i < d_Q4.length ; i++) {//iが6に達するまで順に増加する。iが１から始めるのはすでに
-			if(d_Q4[i] > max) {//変数iを配列d_Q4のインデックスとして使用し、それがmaxを超えたらという意味
-				max = d_Q4[i];
+		for (int i  = 1 ; i < d_Q4.length ; i++) {//iが5に達するまで順に増加する。
+			if(d_Q4[i] > max) {//変数iを配列d_Q4のインデックスとして使用し、それがmax、つまりd_Q4[0]を超えたら、
+				max = d_Q4[i];//maxの値にd_Q4[i]が代入されるという意味。
 				
 			}
 			if (d_Q4[i] < min) {
@@ -99,7 +99,7 @@ public class curriculum4 extends curriculum {
 		のみを出力してくれるよ！*/
 		System.out.println("最小値：" + min);
 		System.out.println();
-//Q5配列内を２倍に変更する方法。拡張for文で配列を出力する方法。
+//Q5大事配列内を２倍に変更する方法。拡張for文で配列を出力する方法。
 		int [] e_Q5 = {1, 2, 3, 4, 5};
 		
 		for (int i = 0 ; i < e_Q5.length ; i++) {/*変数iはこのあとe_Q5配列に適用させる予定なので、
@@ -113,7 +113,7 @@ public class curriculum4 extends curriculum {
 		}
 		System.out.println();
 		
-//Q6
+//Q6大事ユーザーの整数値の入力が配列の要素に含まれるかどうかの判定　switch文またはStream API*ラムダ式の２パターンあり。
 //		Scanner sc = new Scanner(System.in);
 //		int userInput = sc.nextInt();
 //		
@@ -126,7 +126,8 @@ public class curriculum4 extends curriculum {
 //			System.out.println("入力した値は配列に含まれていません。");
 //			break;
 //		}
-		
+//
+		//Stream APIとラムダ式を使って出力してみる。		
 	Scanner scanner = new Scanner(System.in);
 	int userInput = scanner.nextInt();
 	
@@ -139,8 +140,23 @@ public class curriculum4 extends curriculum {
 	} else {
 		result += "含まれていません。";
 	}
+	
 	System.out.println(result);
-		
+	scanner.close();
+	System.out.println();
+	
+//Q7多次元配列を表形式化
+	int [][] arr_Q7 = {{1, 2}, {3, 4}, {5, 6}};
+	
+	for (int i = 0 ; i < arr_Q7.length ; i++) {//i = 1だと以下にあるarr_Q7[i][j]で3 4 5 6と出力される。
+		for (int j = 0 ; j < arr_Q7[i].length ; j++) {
+			System.out.print(arr_Q7[i][j] + " ");//[i]に対応する[j]を出力。これだけだと一列で1 2 3 4 5 6と出力される。
+		}
+		System.out.println();//3行生成される。
+	}
+//	System.out.println(arr_Q7.length);//要素数は3と出力される。
+	
+	System.out.println();
 	}
 
 }
