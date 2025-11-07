@@ -8,7 +8,8 @@ public class curriculum4 extends curriculum {
 		//１パターン目の宣言方法：{}に具体的な要素を直接記入する
 		
 		int [] a = {1, 2, 3, 4, 5};//具体的な要素数を配列宣言。
-		for (int i : a) {//正順表示するならこれでおk
+		for (int i : a) {//正順表示するならこれでおk。forループによって個々の配列要素に変換される。
+//ポイント：forループなしに直接aを出力すると、配列オブジェクト自体の出力をするものと認識されてしまうから注意！
 			System.out.println(i);
 		};
 		System.out.println();
@@ -42,10 +43,18 @@ public class curriculum4 extends curriculum {
 		int [] c_Q3 = {3, 5, 7, 9, 11};//配列を用意
 		int sum = 0;//配列の各要素の合計値を格納するsum変数を用意。
 		/*ここが=0でないと、for-each文でのsumでiの合計値のみを入れることができない*/
-		for (int i : c_Q3) {
-			sum += i;//sum = sum + iと同じ意味。
-			System.out.println(sum);
+		
+		for (int i : c_Q3) {//c_Q3の3,5,7,9,11の値が変数iに代入されていくことを意味する。
+			sum += i;//iに代入されてくる値をそれぞれsumに加算代入するという意味。sum = sum + iと同じ意味。
+//注意ポイント：System.out.println(sum);//ここに出力コードを書くと以下のようにsum変数にiが代入される度に加算代入の結果を
+//			出力してしまうので注意！
+//			3
+//			8
+//			15
+//			24
+//			35
 		}
+		System.out.println(sum);//ここに書けばforループの領域外なのですべてを加算代入した結果を出力するよ！
 		System.out.println();
 //		int [] c = new int[5];
 //		c[0] = 3;
@@ -71,7 +80,7 @@ public class curriculum4 extends curriculum {
 				min = d_Q4[i];
 				
 			}
-//			System.out.println("最大値：" + max);ここはまだforループの領域なので、ここに出力コードを書くと以下のように
+//注意ポイント：System.out.println("最大値：" + max);ここはまだforループの領域なので、ここに出力コードを書くと以下のように
 //			System.out.println("最小値：" + min);羅列されてしまうので注意！
 //			最大値：12
 //			最小値：7
@@ -87,6 +96,20 @@ public class curriculum4 extends curriculum {
 		System.out.println("最大値：" + max);/*ここに書けばforループの領域外なのでforループ内で吟味された内容
 		のみを出力してくれるよ！*/
 		System.out.println("最小値：" + min);
+		System.out.println();
+//Q5
+		int [] e_Q5 = {1, 2, 3, 4, 5};
+		
+		for (int i = 0 ; i < e_Q5.length ; i++) {/*変数iはこのあとe_Q5配列に適用させる予定なので、
+			e_Q5[0]を実現するためにi=0から開始する。*/
+			e_Q5[i] *= 2;//e_Q5[i] = e_Q5 * 2と同じ意味。
+			//上限４まで順増加する変数iをe_Q5配列に適用し、*= 2によってそれらを2倍することを意味する。
+		   
+		}
+		for (int element : e_Q5) {
+			System.out.println(element);
+		}
+		System.out.println();
 	}
 
 }
