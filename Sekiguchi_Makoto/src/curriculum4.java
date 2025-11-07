@@ -1,3 +1,5 @@
+import java.util.Arrays;
+import java.util.Scanner;
 
 public class curriculum4 extends curriculum {
 
@@ -110,6 +112,35 @@ public class curriculum4 extends curriculum {
 			System.out.println(element);
 		}
 		System.out.println();
+		
+//Q6
+//		Scanner sc = new Scanner(System.in);
+//		int userInput = sc.nextInt();
+//		
+//		int [] f_Q6 = {4, 7, 10, 15, 20};
+//		switch (userInput) {
+//		case 4, 7, 10, 15, 20:
+//			System.out.println("入力した値は配列に含まれています。");
+//			break;
+//		default:
+//			System.out.println("入力した値は配列に含まれていません。");
+//			break;
+//		}
+		
+	Scanner scanner = new Scanner(System.in);
+	int userInput = scanner.nextInt();
+	
+	int [] arr = {4, 7, 10, 15, 20};
+	
+	boolean found = Arrays.stream(arr).anyMatch(n -> n == userInput);
+	String result = userInput + "は配列に";
+	if (found) {
+		result += "含まれています。";
+	} else {
+		result += "含まれていません。";
+	}
+	System.out.println(result);
+		
 	}
 
 }
