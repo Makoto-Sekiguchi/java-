@@ -148,13 +148,13 @@ public class curriculum3{
 	
 	
 	String input1 = scanner.nextLine().trim();//ユーザーが誤って入力した前後の空白を削除してくれる
-/*＠＠＠＠＠
+/*注意点
 不要な箇所145～149：String normalizedInput = input1.replaceAll(" ", "").toLowerCase();ユーザー入力は日本語のためここは不要！
 input1で入力を読み込んだ文字に対して、標準化処理を行い、ユーザーの入力を統一された形式に改めて変更した。
 具体的には、input1で読み込んだ文字に対して.replaceAll(" ", "")によって、誤入力されたスペースを除去し、
 .toLowerCase()によって、PcやpC,PC,pcといった入力内容がすべて小文字として認識されるようになる。
 つまり、すべてpcとして統一してくれるということ！
-＠＠＠＠＠*/
+*/
 	String [] requestedItems = input1.split("、");//入力された内容(input1)に対して”、”を付けることで複数の入力を可能にする
 	
 	for (String itemInput : requestedItems) {
