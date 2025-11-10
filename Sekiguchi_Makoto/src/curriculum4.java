@@ -174,8 +174,10 @@ public class curriculum4{
 	System.out.println();
 	
 //Q8大事多次元配列の合計値の出力
+	
 //ポイント:1.合計値を格納する変数と多次元配列の用意。2.
 //注意点：合計値を格納するsum変数を忘れない！	
+	
 	System.out.println("Q8開始");
 	
 	int sum1 = 0;// 合計値を格納する変数sum
@@ -189,9 +191,12 @@ public class curriculum4{
 			/*理由：１．これだと一次元配列同士の加算を意味してしまい、182行目の二次元配列コードとの矛盾が生じるから。
 			２．また、javaにおいては配列同士を直接加算演算子でつなげることができない。*/
 			
-		//	System.out.println(sum1);//出力コードを書くとsum[0][0],sum[0][1],sum[0][2],sum[1][0],sum[1][1]...とかく配列同士の計算過程をすべて出力できる。
+		     /*System.out.println(sum1);//出力コードを書くと二次元[i]と[j]に着目した計算過程と結果が出力される。
+		 sum[0][0],sum[0][1],sum[0][2],sum[1][0],sum[1][1]...とかく配列同士の計算過程をすべて出力できる。*/
+		 
 		}
-		System.out.println(sum1);//ここに出力コードを書くと計算過程も出力される。結果のみ出力したい場合はforループの外に書けばよいとわかる。
+		/*System.out.println(sum1);ここに出力コードを書くと[i]と[j]のうち、[i]に着目した計算過程と結果が出力される。
+		結果のみ出力したい場合はforループの外に書けばよいとわかる。*/
 	}
 	System.out.println(sum1);
 //	//拡張forループver.
@@ -204,7 +209,39 @@ public class curriculum4{
 //			System.out.println(sum2);// ×:element += row;
 //			}
 //		}
+	System.out.println();
+//Q9 多次元配列のmaxとminの出力
+	System.out.println("Q9開始");
+	int [][] arr_Q9 = {{12, 15, 8}, {6, 19, 25}, {30, 2, 10}};
+    int maxQ9 = arr_Q9[0][0];//配列内の12のこと。           //×int maxQ9 = 0;
+    int minQ9 = arr_Q9[0][0];//配列内の12のこと。　　　　　//×int minQ9 = 0;
+    
+    for (int [] row : arr_Q9) {//arr_Q9の内容が繰り返しrowに代入されていく。
+    	for (int element : row) {//arr_Q9の内容が代入されたrowがelementに代入されていく。
+    		if (element > maxQ9) {
+    			maxQ9 = element;
+    		}
+    		if (element < minQ9) {
+    			minQ9 = element;
+    		}
+    	}
+    }
+    System.out.println(maxQ9);
+    System.out.println(minQ9);
 	
+//	for (int i = 0 ; i < arr_Q9.length ; i++) {
+//		for (int j = 0 ; j < arr_Q9[i].length ; j++) {
+//			if (i > maxQ9) {
+//				i = maxQ9;
+//				System.out.println(i);
+//			}
+//			if (j < minQ9) {
+//				j = minQ9;
+//				System.out.println(j);
+//			}
+//		}
+//	}
+	System.out.println();
 	}
 
 }
