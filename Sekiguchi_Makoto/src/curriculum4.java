@@ -83,6 +83,7 @@ public class curriculum4{
 				min = d_Q4[i];
 				
 			}
+		
 //注意ポイント：System.out.println("最大値：" + max);ここはまだforループの領域なので、ここに出力コードを書くと以下のように
 //			System.out.println("最小値：" + min);羅列されてしまうので注意！
 //			最大値：12
@@ -210,38 +211,53 @@ public class curriculum4{
 //			}
 //		}
 	System.out.println();
-//Q9 多次元配列のmaxとminの出力
+//Q9 多次元配列のmaxとminの出力(拡張forとテンプレの２パターン)
 	System.out.println("Q9開始");
 	int [][] arr_Q9 = {{12, 15, 8}, {6, 19, 25}, {30, 2, 10}};
     int maxQ9 = arr_Q9[0][0];//配列内の12のこと。           //×int maxQ9 = 0;
     int minQ9 = arr_Q9[0][0];//配列内の12のこと。　　　　　//×int minQ9 = 0;
-    
-    for (int [] row : arr_Q9) {//arr_Q9の内容が繰り返しrowに代入されていく。
-    	for (int element : row) {//arr_Q9の内容が代入されたrowがelementに代入されていく。
-    		if (element > maxQ9) {
-    			maxQ9 = element;
-    		}
-    		if (element < minQ9) {
-    			minQ9 = element;
-    		}
-    	}
-    }
-    System.out.println(maxQ9);
-    System.out.println(minQ9);
-	
-//	for (int i = 0 ; i < arr_Q9.length ; i++) {
-//		for (int j = 0 ; j < arr_Q9[i].length ; j++) {
-//			if (i > maxQ9) {
-//				i = maxQ9;
-//				System.out.println(i);
-//			}
-//			if (j < minQ9) {
-//				j = minQ9;
-//				System.out.println(j);
-//			}
-//		}
-//	}
+    //以下拡張for
+//    for (int [] row : arr_Q9) {//arr_Q9の内容が繰り返しrowに代入されていく。
+//    	for (int element : row) {//arr_Q9の内容が代入されたrowがelementに代入されていく。
+//    		if (element > maxQ9) {
+//    			maxQ9 = element;/*element = maxQ9だと１２が代入される。
+//    			代入が繰り返される値/順にサーチする機能を持つ値(element)が配列内の最大値・最小値となりうるので、
+//    			右辺に代入される内容elementを入れれば良いと判断できる。*/
+//    		}
+//    		if (element < minQ9) {
+//    			minQ9 = element;//element = maxQ9だと１２が代入される
+//    		}
+//    	}
+//    }
+//    System.out.println(maxQ9);
+//    System.out.println(minQ9);
+	//以下テンプレ
+	for (int i = 0 ; i < arr_Q9.length ; i++) {
+		for (int j = 0 ; j < arr_Q9[i].length ; j++) {
+			if (arr_Q9[i][j] > maxQ9) {//二次元配列の両方において、maxQ9の初期値を超えたものについては、
+				maxQ9 =arr_Q9[i][j];//maxQ9に二次元配列の両方のうち、一番大きい値をmaxQ9に代入する。
+				
+			}
+			if (arr_Q9[i][j] < minQ9) {//二次元配列の両方うち、minQ9の初期値を超えたものについては、
+				minQ9 =arr_Q9[i][j];//minQ9に二次元配列の両方のうち、一番大きい値をminQ9に代入する。
+				
+			}
+		}
+	}
+	System.out.println(maxQ9);//結果のみの出力はfor文の外側
+	System.out.println(minQ9);//結果のみの出力はfor文の外側
 	System.out.println();
+	
+//Q10３次元配列の要素をすべて表示する方法
+	int [][][] arrQ10 = {{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}};
+	
+	for (int i = 0 ; i < arrQ10.length ; i++) {
+		for (int j = 0 ; j < arrQ10[i].length ; j++) {
+			for (int k = 0 ; k < arrQ10[i][j].length ; k++) {
+				System.out.println(arrQ10[i][j][k]);
+			}
+		}
+	}
 	}
 
 }
