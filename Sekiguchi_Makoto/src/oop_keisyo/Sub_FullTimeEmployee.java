@@ -15,6 +15,7 @@ public class Sub_FullTimeEmployee extends Employee_abstract{
 		if (hoursWorked == regularHours) {
 			
 			return (int) wage;//勤務時間が定時時間なら定時の給料をそのまま返す。
+			
 		} else {
 			double overTimeRate = 1.25;//残業時の給料は1.25倍される
 			double overTimeHours = hoursWorked - regularHours;//残業時間=総労働時間-定時

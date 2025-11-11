@@ -9,6 +9,6 @@ public class Sub_PartTimeEmployee extends Employee_abstract{
 	}
 	@Override
 	public int calculateDailyWage(int hoursWorked) {
-		return hoursWorked * HOURLY_RATE;
+		return hoursWorked * HOURLY_RATE;//残業がないためこれでおk。
 	}
 }
