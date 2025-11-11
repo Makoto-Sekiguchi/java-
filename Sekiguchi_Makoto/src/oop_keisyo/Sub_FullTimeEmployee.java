@@ -10,11 +10,11 @@ public class Sub_FullTimeEmployee extends Employee_abstract{
 	@Override//オーバーライドを宣言し、抽象クラスの抽象メソッドを実装する。
 	public int calculateDailyWage(int hoursWorked) {
 		int regularHours = 8;
-		double wage = 0;
-		wage = regularHours * HOURLY_RATE;
-		if (hoursWorked <= regularHours) {
-			wage = regularHours * HOURLY_RATE;//定時の給料
-			return (int) wage;
+		double wage = regularHours * HOURLY_RATE;
+		
+		if (hoursWorked == regularHours) {
+			
+			return (int) wage;//勤務時間が定時時間なら定時の給料をそのまま返す。
 		} else {
 			double overTimeRate = 1.25;//残業時の給料は1.25倍される
 			double overTimeHours = hoursWorked - regularHours;//残業時間=総労働時間-定時
