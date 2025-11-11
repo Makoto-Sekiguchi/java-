@@ -1,7 +1,7 @@
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class curriculum4{
+public class Curriculum4{
 
 	public static void main(String[] args) {
 		//目標：２パターン載せsン現方法と２パターンの宣言方法を５秒以内に書けるようになる。
@@ -249,6 +249,8 @@ public class curriculum4{
 	System.out.println();
 	
 //Q10３次元配列の要素をすべて表示する方法
+	
+	//ポイント：次元が増えるごとに[]とfor文のネスト構造が増えるだけ！
 	int [][][] arrQ10 = {{{1, 2}, {3, 4}}, {{5, 6}, {7, 8}}};
 	
 	for (int i = 0 ; i < arrQ10.length ; i++) {

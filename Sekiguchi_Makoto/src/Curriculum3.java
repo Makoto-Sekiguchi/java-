@@ -2,7 +2,7 @@
 import java.util.Random;
 import java.util.Scanner;
 
-public class curriculum3{
+public class Curriculum3{
 
 	/**
 	 * @param args

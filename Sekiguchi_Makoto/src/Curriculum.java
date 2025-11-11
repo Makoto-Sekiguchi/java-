@@ -1,5 +1,5 @@
 
-public class curriculum {
+public class Curriculum {
 
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
@@ -128,7 +128,11 @@ public class curriculum {
 		
 		//課題Q7
 		int score = 80;
-		score = score + 20;
+		score += 
+				
+				
+				
+				20;
 		System.out.println("最終スコア：" + score);
 		
 //型変換		
@@ -197,10 +201,10 @@ public class curriculum {
 //		isNumberic = true：=があり代入式に該当するため不適。
 			
 		//整数同士の割り算をfloat型に代入すると
-//		float ans = 7 / 6f;
-//		System.out.println(ans);//これだと小数点の計算まで行ってくれる。
-//		float ans2 = 7 / 6;
-//		System.out.println(ans2);//これだと整数同士の割り算がfloat型に代入されてる判定なので小数点付きの整数値が出力される。
+		float ans = 7 / 6f;
+		System.out.println(ans);//これだと小数点の計算まで行ってくれる。
+		float ans2 = 7 / 6;
+		System.out.println(ans2);//これだと整数同士の割り算がfloat型に代入されてる判定なので小数点付きの整数値が出力される。
 	}
 	
 	

@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class curriculum2{
+public class Curriculum2{
 
 	/**
 	 * @param args
@@ -13,8 +13,10 @@ public class curriculum2{
 			System.out.println("合格です！");
 	     }
 		//Q2大事条件応じて出力内容を変える方法false時の出力が可能。具体的な区間があるので三項演算子やswitch文の適用はできない？
-		int age = 25;
-		if (age >= 20 && age <= 30) {
+		int age = 31;
+		if (age >= 20 && age <= 30) {//&&が||だとage = 31でも適正年齢と表示される！
+			
+			
 			System.out.println("適正年齢です");
 		} else {
 			System.out.println("対象外です");
@@ -41,34 +43,28 @@ public class curriculum2{
 		int x = 30;
 		int y = 15;
 		int z = 50;
-		int max = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
-		System.out.println(max);
-//		int max2 = Math.max(x, Math.max(y, z));
-//		System.out.println(max2);
+//		int max = (x > y) ? ((x > z) ? x : z) : ((y > z) ? y : z);
+//		System.out.println(max);
+		int max2 = Math.max(x, Math.max(y, z));
+		System.out.println(max2);
 		
-		//Q5if文と三項演算子の２種類の書き方
+		//Q5if文
 		int num = 5;
 		if (num > 0) {
 			System.out.println("正の数です");
 		}else if (num == 0) {
 			System.out.println("0です");
 		} else {System.out.println("負の数です");}
-		/*三項演算子だと以下のコードになる。
-		 int num = 5;
-		 (num > 0) ? "正の数です" : ((num == 0) ? "0です" : "負の数です");
-		  System.out.println(num);*/
 		
-		//Q6if文と三項演算子の２種類の書き方
+		
+		//Q6if文
 		int value = 2;
 		if (value % 2 == 0) {
 			System.out.println("偶数です");
 		} else {
 			System.out.println("奇数です");
 		}
-		/*三項演算子だと以下のコードになる
-		 int value = 2;
-		 (value % 2 == 0) ? "偶数です" : "奇数です"
-		 System.out.println(value);*/
+		
 		
 		//Q7大事区間によって異なる出力（Q3と同じ）
 		int score_Q7 = 40;
@@ -78,7 +74,9 @@ public class curriculum2{
 		} else {System.out.println("不可");
 		}
 //		間違え
-//		if (score_Q7 >= 90) {
+//		if (score_Q7 >= 90)
+//		
+//		{
 //			System.out.println("優");
 //		} else if (score_Q7 <= 89) {
 //			System.out.println("良");
@@ -91,10 +89,15 @@ public class curriculum2{
 		
 		//Q8大事nullと空欄が入力されたときにエラーを表示し、そうでないときは入力内容を表示してくれる
 		Scanner sc = new Scanner(System.in);
-		String userInput = sc.nextLine().trim();
-		String normalizedInput = userInput.replaceAll(" ", "").toLowerCase();
+		String userInput = sc.nextLine().trim();/*.nextLine()でユーザー入力を読み込み、
+		.trim()でユーザー入力によって生じた前後の空白を除去した状態で読み込んでくれるという意味！*/
+		String normalizedInput = userInput.replaceAll(" ", "").toLowerCase();/*.replaceAll(" ", "")によって文中の空白を""という空文字列化し、
+		.toLowerCase()によって大文字小文字はすべて小文字として認識されるようにしている！*/
 		
-		if (normalizedInput == null || normalizedInput.equals("")) {
+		if (normalizedInput == null || normalizedInput.equals("")) {/*92によってユーザーが入力した空白または空文字列は、
+		93によって文中の空白は""という空文字列として認識されるため、
+		.equals()内で空文字列""で判定されるようにしている!
+		そして、その空文字列を認識したら"入力が無効です"と出力されるようにif文を組んでいるという構造だよ！*/
 			System.out.println("入力が無効です");
 		
 		} else {
@@ -149,10 +152,9 @@ public class curriculum2{
 		default :
 			System.out.println("無効な月です");
 		}
-	}
+	
 
-	private static void toLowerCase() {
-		// TODO 自動生成されたメソッド・スタブ
+	
 		
 	}
 }
@@ -185,13 +187,4 @@ public class curriculum2{
 //			System.out.println("可");
 //		} else if (score_Q7 < 50){
 //			System.out.println("不可");
-//		}
-//Q8大事nullと空欄が入力されたときにエラーを表示し、そうでないときは入力内容を表示してくれる
-//		String input = "";
-//		if (input == null || input.equals("")) {
-//			System.out.println("入力が無効です");
-//		
-//		} else {
-//			System.out.println("入力された内容は" + input + "です");
-//			
 //		}
