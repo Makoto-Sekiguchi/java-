@@ -3,16 +3,20 @@ package oop_keisyo;
 public class Sub_FullTimeEmployee extends Employee_abstract{
 	private static final int HOURLY_RATE = 1200;
 	
-	public Sub_FullTimeEmployee (String id, String name) {//コンストラクタ
-		super(id, name);
+	public Sub_FullTimeEmployee (String id, String name) {//子クラスのコンストラクタ=Mainクラスの実引数"F001", "田中"を受け取る。
+		super(id, name);//その実引数を受け取ったら、superという親クラスの窓口に渡す。
+		//すると、このsuperを介して親クラス内に記述されてるid, nameに実引数"F001", "田中"を代入して初期化が完了する。
+		//初期化が完了すると、親クラス内のgetterが作動する。
+		//今回は、getter内にreturn.employeeldとreturn.nameがあるので、それらのreturnが作動することになる。
 	}
 	
 	@Override//オーバーライドを宣言し、抽象クラスの抽象メソッドを実装する。
-	public int calculateDailyWage(int hoursWorked) {
+	public int calculateDailyWage(int hoursWorked) {//抽象クラスの抽象メソッドを実装した。
+		//これより下のコードは子クラス独自の内容。
 		int regularHours = 8;
 		double wage = regularHours * HOURLY_RATE;
 		
-		if (hoursWorked == regularHours) {
+		if (hoursWorked == regularHours) {//
 			
 			return (int) wage;//勤務時間が定時時間なら定時の給料をそのまま返す。
 			

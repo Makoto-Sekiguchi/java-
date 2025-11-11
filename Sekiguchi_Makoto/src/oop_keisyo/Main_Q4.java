@@ -4,7 +4,7 @@ public class Main_Q4 {
 
 	public static void main(String[] args) {
 		// TODO 自動生成されたメソッド・スタブ
-		int hoursWorked = 9;
+		int hoursWorked = 9;//勤務時間。
 //		Employee_abstract FullTimeEmployee = new Employee_abstract();
 //		Employee_abstract PartTimeEmployee = new Employee_abstract();
 		
