@@ -1,5 +1,11 @@
 package interface_abstractClass;
 
+
+/*実装内容：
+ * 1.抽象クラスの継承(extends 抽象クラス名が必須)、
+ * 2.Mainクラスからの実引数の受け取り(コンストラクタとsuper()が必須)、
+ * 3.オーバーライド(インターフェイスの抽象メソッドにこのクラス特有の処理と出力したい値のreturnが必須)
+ */
 public class Interface_FullTimeEmployee extends interface_AbstractClass_Billable{
 
 
