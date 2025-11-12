@@ -3,14 +3,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 //リスト化➡データの増減の管理が楽になる。
-//継承が含まれるリスト化➡実引数の異なるサブクラスを一括管理できるかつデータの拡張性が向上（将来的にほかのデータを追加するのが楽になる。）する。
+//継承が含まれるリスト化➡親クラスの継承を受ける実引数の異なるサブクラスを見やすく一括管理できるかつデータの拡張性が向上（将来的にほかのデータを追加するのが楽になる。）する。
 
 //ループ処理➡すべてのデータに対して同じ処理を自動的に実行できるため管理が効率的になる。
 
 public class Pf_Main {
 
 	public static void main(String[] args) {
-		//継承が含まれるリスト化
+		//継承が適用されるデータに対するリスト化
 List<Pf_Abstract_Employee> employees = new ArrayList<>();
 
 //以下、リストの性質を持つemployeesオブジェクトに、実引数（詳細な値）持ちのフルタイム社員と契約社員を追加するという旨の内容を記述していく。
@@ -33,7 +33,7 @@ employees.add(new Pf_ContractEmployee("C002", "山田"));
 for (Pf_Abstract_Employee emp : employees) {//employeesにリスト化された計４名がempに代入されていく。
 	int hours = 0;//
 	if (emp.getName().equals("佐藤")) {//emp.getName():empに代入された名前が、.equals("佐藤")佐藤の場合、
-		hours = 7;//hours変数に7が代入される。.getId()なら、.equalsの()内は"F001"を入れればよい。
+		hours = 7;//hours変数に7が代入される。つまり、佐藤を取得したらそいつの時間は７時間にするという意味。.getId()なら、.equalsの()内は"F001"を入れればよい。
 	} else if (emp.getName().equals("高橋")) {
 		hours = 8;
 	} else if (emp.getName().equals("田中")) {
