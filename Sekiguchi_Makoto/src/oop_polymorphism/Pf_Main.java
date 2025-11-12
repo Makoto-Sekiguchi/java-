@@ -1,4 +1,4 @@
-package oop_polimorphism;
+package oop_polymorphism;
 
 import java.util.ArrayList;
 import java.util.List;

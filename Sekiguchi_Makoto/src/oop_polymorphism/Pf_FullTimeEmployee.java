@@ -1,4 +1,4 @@
-package oop_polimorphism;
+package oop_polymorphism;
 
 public class Pf_FullTimeEmployee extends Pf_Abstract_Employee {
 
