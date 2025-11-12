@@ -21,14 +21,15 @@ public class interface_Main {
 
 		//リストに追加されたすべてのデータに対して同じ日給計算処理の仕方を適用する。
 		
-//コード記述時の思考：各社員オブジェクトに対応した勤務時間と各社員の勤務時間に対応した日給計算にはforループでコンテナサイズ未満に設定すれば双方向対応させられるなと判断できる。
+//コード記述時の思考：勤務時間が各社員オブジェクトと順に対応した(双方向対応した)日給計算にはforループで変数iがコンテナサイズ未満になれば良いと判断できる。
 		
-		for (int i = 0; i < payables.size(); i++) {//コード記述時の思考：各社員オブジェクトに対応した勤務時間を設定するにはforループで使う変数i=0～3を勤務時間配列と各社員オブジェクトに適用させれば良い。
+		for (int i = 0; i < payables.size(); i++) {
+			//26,28,29行目のコードによって勤務時間が各社員オブジェクトと順に対応した。
+			int hours = hoursList[i];//変数iを20行目に適用。この配列を変数化すればわざわざcostForDayメソッドにhourList[i]と書かずに済む！
+			Billable item = payables.get(i);//変数iを13行目、つまり各社員オブジェクトを格納するpayablesに適用し、それらをBillable型の変数itemに代入。hoursList[i]とpayables.get(i)がそれぞれ対応する。
 
-			//int hours = hoursList[i];//双方向対応させた勤務時間を変数化すれば勤務時間の取得：配列10,7,8,9を順にhours変数に代入。
-			Billable item = payables.get(i);//各社員オブジェクトの取得し、順にBillable型の変数itemに代入。hoursList[i]とpayables.get(i)がそれぞれ対応する。
-
-			int cost = item.costForDay(hoursList[i]);//ポリモーフィズムの実行：各社員オブジェクトの種類（フルタイムクラスor契約クラス）を判断してからcostForDayメソッドを実行。その実行結果を変数costに代入。
+			int cost = item.costForDay(hours);/*ポリモーフィズムの実行：各社員オブジェクトの勤務時間によってcostForDayメソッドが返す値が異なるようにしたい。
+			各社員オブジェクトの種類（フルタイムクラスor契約クラス）を判断してからcostForDayメソッドを実行。その実行結果を変数costに代入。*/
 
 			String name = "";//目的：コンパイルエラーの回避。解説：ここで空文字で初期化することで仮にifブロックに入らなくてもString nameが空文字を持つ有効な文字列と認識され、コンパイルエラーを回避できる。
 			
@@ -46,7 +47,7 @@ public class interface_Main {
 //				System.out.println(emp.getName() + "さんの日給は" + salary + "円です");
 //			}
 			//System.out.println();
-			System.out.printf("社員名： %s (%s), 勤務時間： %d時間, 日給： %d円\n", name, type, hoursList[i], cost);
+			System.out.printf("社員名： %s (%s), 勤務時間： %d時間, 日給： %d円\n", name, type, hours, cost);
 		}
 	}
 }
