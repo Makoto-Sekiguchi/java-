@@ -24,7 +24,7 @@ public class ContracterClass implements CalculateSalary {
 	
 	public int SalaryCalc(int hoursWorked) {
 		int wagePerHour = 1000;
-		return (hours * wagePerHour);
+		return hours * wagePerHour;
 		}
 }
 		

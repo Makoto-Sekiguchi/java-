@@ -14,7 +14,8 @@ public class FulltimerClass implements CalculateSalary {
 	private int hours;
 	
 	public FulltimerClass(String name2, String type2, int hours2) {
-		 name = name2;
+		 name = name2;/*注意点：ここでString～としてしまうと、12～14の変数とは別の新しい変数と認識されてしまうので左のようにすること！
+		複雑なコードだと、基本的な代入式であることが見抜けなくなっていしまうことがある。*/
 		 type = type2;
 		 hours = hours2;
 	}
@@ -30,7 +31,7 @@ public class FulltimerClass implements CalculateSalary {
 	@Override
 	public int SalaryCalc(int hoursWorked) {
 		int wagePerHour = 1200;
-		return (getHours() * wagePerHour);
+		return getHours() * wagePerHour;/*ここは()でgetHours(9とwagePerHourを囲う必要はないよ！*/
 		
 	}
 //	private String name;//privateによって、同じクラス内からのみアクセス可能➡ゲッターとセッターでのみ取得可能。また、field keyがある＝コンストラクタがあること！
