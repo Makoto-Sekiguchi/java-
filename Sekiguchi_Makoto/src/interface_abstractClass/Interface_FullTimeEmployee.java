@@ -6,7 +6,7 @@ package interface_abstractClass;
  * 2.Mainクラスからの実引数の受け取り(コンストラクタとsuper()が必須)、
  * 3.オーバーライド(インターフェイスの抽象メソッドにこのクラス特有の処理と出力したい値のreturnが必須)
  */
-public class Interface_FullTimeEmployee extends interface_AbstractClass_Billable{
+public class Interface_FullTimeEmployee extends Interface_AbstractClass_Billable{
 
 
 	Interface_FullTimeEmployee(String id, String name) {//コンストラクタの設定

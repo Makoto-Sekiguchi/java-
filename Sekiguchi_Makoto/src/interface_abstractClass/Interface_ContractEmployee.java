@@ -4,8 +4,8 @@ package interface_abstractClass;
  * 2.Mainクラスからの実引数の受け取り
  * 3.オーバーライド(抽象メソッドにこのクラス特有の処理を設計して最終値をreturnで返す)
  * */
-public class interface_ContractEmployee extends interface_AbstractClass_Billable{
-public interface_ContractEmployee(String id, String name) {
+public class Interface_ContractEmployee extends Interface_AbstractClass_Billable{
+public Interface_ContractEmployee(String id, String name) {
 	super(id, name);
 }
 
