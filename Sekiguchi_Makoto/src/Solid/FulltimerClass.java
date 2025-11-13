@@ -16,7 +16,7 @@ public class FulltimerClass implements CalculateSalary {
 	public FulltimerClass(String name2, String type2, int hours2) {
 		 name = name2;/*注意点：ここでString～としてしまうと、12～14の変数とは別の新しい変数と認識されてしまうので左のようにすること！
 		複雑なコードだと、基本的な代入式であることが見抜けなくなっていしまうことがある。*/
-		 type = type2;
+		 type = type2;/*注意点：抽象クラスのサブクラスの時は{}内はsuper(name2, type2, hours2)のみで良いが、抽象クラスがない場合はこのように再代入することを忘れない！*/
 		 hours = hours2;
 	}
 	public String getName() {
