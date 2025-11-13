@@ -18,13 +18,13 @@ public class ContracterClass implements CalculateSalary {
 		return type;
 	}
 	public int getHours() {
-		return hours;
+		return hours;//注意点：あくまでgetする値は7行目なのでhours2は不可！
 	}
 	@Override
 	
 	public int SalaryCalc(int hoursWorked) {
 		int wagePerHour = 1000;
-		return hours * wagePerHour;
+		return hours * wagePerHour;//getHours()でもhoursでもおｋ
 		}
 }
 		

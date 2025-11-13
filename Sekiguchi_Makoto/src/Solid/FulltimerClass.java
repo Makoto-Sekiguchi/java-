@@ -31,7 +31,7 @@ public class FulltimerClass implements CalculateSalary {
 	@Override
 	public int SalaryCalc(int hoursWorked) {
 		int wagePerHour = 1200;
-		return getHours() * wagePerHour;/*ここは()でgetHours(9とwagePerHourを囲う必要はないよ！*/
+		return getHours() * wagePerHour;/*getHours()でもhoursでもおｋ。また、ここは()でgetHours(9とwagePerHourを囲う必要はないよ！*/
 		
 	}
 //	private String name;//privateによって、同じクラス内からのみアクセス可能➡ゲッターとセッターでのみ取得可能。また、field keyがある＝コンストラクタがあること！
