@@ -7,6 +7,9 @@ import java.util.List;
  * 1.双方向対応させるためのpayablesリストと
  * 2.
  * 3.*/
+/*雇用形態ごとに社員IDと社員名を表示しながら勤務時間に対応した日給計算処理リストを出力したい。
+ * 必要なこと：IDと社員名を一括管理する雇用形態クラス。それを格納するListのpayablesインスタンス。この二つを組み合わせた社員オブジェクト。
+ * for文で勤務時間配列を各社員オブジェクトと対応させ、costForDayメソッドを勤務時間を基準に判断するように記述。*/
 public class Interface_Main {
 	public static void main(String[] args) {
 		//for文で同じ処理をするための準備：List<> = new ArrayList<>():リスト化。かつpayables:payablesというコンテナで、複数の社員のデータが格納された大きい箱の役割。かつ<Billable>:各データの型をBillableという"型"に優先して統一する。のちに抽象クラスに型変換してゲッターを利用できるようにすることを忘れない！
