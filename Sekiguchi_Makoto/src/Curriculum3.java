@@ -138,15 +138,14 @@ public class Curriculum3 {
 		System.out.println("調べたい在庫は？");
 		Random random = new Random();//ランダムな数字の生成の受付 > random.nextInt(数字の幅)とそれを格納する変数と即連想する！
 
-		
 		int stockTv = random.nextInt(12);//0～11の幅のランダムな数字をstockTv変数に格納
 		int stockDisplay = 11 - stockTv;//ディスプレイの在庫はstockTvと合わせて１１個にする必要がある。
-//		int stockPc = random.nextInt(12);//0～11の幅のランダムな数字をstockPc変数に格納
-//		int stockAc = random.nextInt(12);//0～11の幅のランダムな数字をstockAc変数に格納
-//		int stockRefridge = random.nextInt(12);//0～11の幅のランダムな数字をstockRefridge変数に格納
-//		int stockWashing = random.nextInt(12);//0～11の幅のランダムな数字をstockWashing変数に格納
-//		int stockVapor = random.nextInt(12);
-//		int stockFan = random.nextInt(12);
+		//		int stockPc = random.nextInt(12);//0～11の幅のランダムな数字をstockPc変数に格納
+		//		int stockAc = random.nextInt(12);//0～11の幅のランダムな数字をstockAc変数に格納
+		//		int stockRefridge = random.nextInt(12);//0～11の幅のランダムな数字をstockRefridge変数に格納
+		//		int stockWashing = random.nextInt(12);//0～11の幅のランダムな数字をstockWashing変数に格納
+		//		int stockVapor = random.nextInt(12);
+		//		int stockFan = random.nextInt(12);
 
 		String input1 = scanner.nextLine().trim();//ユーザーが誤って入力した前後の空白を削除してくれる
 		/*注意点
@@ -159,14 +158,14 @@ public class Curriculum3 {
 		String[] requestedItems = input1.split("、");//入力された内容(input1)に対して”、”を付けることで複数の入力を可能にする
 
 		for (String itemInput : requestedItems) {
-			
-			switch(itemInput) {
+
+			switch (itemInput) {
 			case "テレビ":
 			case "ディスプレイ":
 				int stock = itemInput.equals("テレビ") ? stockTv : stockDisplay;//itemInputがテレビという入力を受け取ったらstockTvを変数stockに代入する。そうでないならstockDisplayを変数stockに代入する。
 				System.out.println(itemInput + "の残り台数は" + stock + "です。");
 				break;
-				
+
 			case "パソコン":
 			case "冷蔵庫":
 			case "エアコン":
@@ -174,41 +173,41 @@ public class Curriculum3 {
 			case "洗濯機":
 				System.out.println(itemInput + "の残り台数は" + random.nextInt(12) + "です。");
 				break;
-			default:	
-				System.out.println(itemInput + "は存在しない商品です。");
-			}	
-
-//			switch (itemInput) {//scanner.がついてるinput1変数
-//			case "　", " ":
-//				System.out.println("商品名が入力されていません。");
-//				break;
-//				
-//				
-//			case "パソコン":
-//				System.out.println("パソコンの残り台数は" + stockPc + "です。");
-//				break;
-//			case "エアコン":
-//				System.out.println("エアコンの残り台数は" + stockAc + "です。");
-//				break;
-//			case "冷蔵庫":
-//				System.out.println("冷蔵庫の残り台数は" + stockRefridge + "です。");
-//				break;
-//			case "洗濯機":
-//				System.out.println("洗濯機の残り台数は" + stockWashing + "です。");
-//				break;
-////			case "テレビ", "ディスプレイ":
-////				System.out.println("テレビの残り台数は" + stockTv + "です。ディスプレイの在庫は" + stockDisplay + "です。");
-////				break;
-//			case "加湿器":
-//				System.out.println("加湿器の残り台数は" + stockVapor + "です。");
-//				break;
-//			case "扇風機":
-//				System.out.println("扇風機の残り台数は" + stockFan + "です。");
-//				break;
-//			default:
-//				System.out.println("存在しません");
-//				break;
-//			}
+				
+			default:
+				System.out.println("『 " + itemInput + "』は存在しない商品です。");
+			}
+			//			switch (itemInput) {//scanner.がついてるinput1変数
+			//			case "　", " ":
+			//				System.out.println("商品名が入力されていません。");
+			//				break;
+			//				
+			//				
+			//			case "パソコン":
+			//				System.out.println("パソコンの残り台数は" + stockPc + "です。");
+			//				break;
+			//			case "エアコン":
+			//				System.out.println("エアコンの残り台数は" + stockAc + "です。");
+			//				break;
+			//			case "冷蔵庫":
+			//				System.out.println("冷蔵庫の残り台数は" + stockRefridge + "です。");
+			//				break;
+			//			case "洗濯機":
+			//				System.out.println("洗濯機の残り台数は" + stockWashing + "です。");
+			//				break;
+			////			case "テレビ", "ディスプレイ":
+			////				System.out.println("テレビの残り台数は" + stockTv + "です。ディスプレイの在庫は" + stockDisplay + "です。");
+			////				break;
+			//			case "加湿器":
+			//				System.out.println("加湿器の残り台数は" + stockVapor + "です。");
+			//				break;
+			//			case "扇風機":
+			//				System.out.println("扇風機の残り台数は" + stockFan + "です。");
+			//				break;
+			//			default:
+			//				System.out.println("存在しません");
+			//				break;
+			//			}
 
 		}
 		scanner.close();
