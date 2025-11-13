@@ -22,7 +22,7 @@ public class ContracterClass implements CalculateSalary {
 	}
 	@Override
 	
-	public int SalaryCalc(int hoursWorked) {
+	public int CalcSalary(int hoursWorked) {
 		int wagePerHour = 1000;
 		return hours * wagePerHour;//getHours()でもhoursでもおｋ
 		}

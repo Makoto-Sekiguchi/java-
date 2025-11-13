@@ -21,8 +21,9 @@ public class Main_Q7 {
 		for (int i = 0 ; i < allStaff.size() ; i++) {
 			int hours = hoursList[i];
 			CalculateSalary item = allStaff.get(i);
-			int cost = item.SalaryCalc(hours);/*hoursは、22行目のこと。22行目は18行目の各要素、つまりint型の整数。これがint hoursWorkedに代入される！*/
-			String type = allStaff.getClass().getSimpleName();
+			
+			int cost = item.CalcSalary(hours);/*hoursは、22行目のこと。22行目は18行目の各要素、つまりint型の整数。これがint hoursWorkedに代入される！*/
+			String type = allStaff.get(i).getClass().getSimpleName();
 			String name = item.getName();
 			
 			System.out.printf("社員名： %s (%s), 勤務時間： %d時間, 日給： %d円\n", name, type, hours, cost);

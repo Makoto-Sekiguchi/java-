@@ -29,7 +29,7 @@ public class FulltimerClass implements CalculateSalary {
 		return hours;
 	}
 	@Override
-	public int SalaryCalc(int hoursWorked) {
+	public int CalcSalary(int hoursWorked) {
 		int wagePerHour = 1200;
 		return getHours() * wagePerHour;/*getHours()でもhoursでもおｋ。また、ここは()でgetHours(9とwagePerHourを囲う必要はないよ！*/
 		
