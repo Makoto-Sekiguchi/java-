@@ -1,5 +1,6 @@
 package selfintroduction1;
 
+
 public class Person {
 //Q1field key
 	private String name;//０．初期値をセットし、
@@ -19,7 +20,8 @@ public class Person {
 		this.age = age2;
 		this.height = height2;
 		this.weight = weight2;
-		this.bmi = bmi2;
+		this.bmi = weight / (height * height) ;
+		
 	}
 	
 	public String getName() {//３．その代入された値を手に入れて、
@@ -35,7 +37,7 @@ public class Person {
 		return this.weight;
 	}
 	public double getBmi() {
-		return this.bmi = weight / (height * height);
+		return this.bmi;
 	}
 	public void print() {
 		System.out.println("名前は" + getName()/*getName()が取得する値はthis.nameだから、
