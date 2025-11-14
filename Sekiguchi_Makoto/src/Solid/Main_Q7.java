@@ -20,9 +20,10 @@ public class Main_Q7 {
 		
 		for (int i = 0 ; i < allStaff.size() ; i++) {
 			int hours = hoursList[i];
-			CalculateSalary item = allStaff.get(i);
+			CalculateSalary item = allStaff.get(i);/*右辺：allStaffリストからi、
+			つまり各社員オブジェクトを取り出すという意味。これをCalculateSalary型のitemに格納した。*/
 			
-			int cost = item.CalcSalary(hours);/*hoursは、22行目のこと。22行目は18行目の各要素、つまりint型の整数。これがint hoursWorkedに代入される！*/
+			int cost = item.calcSalary(hours);/*hoursは、22行目のこと。22行目は18行目の各要素、つまりint型の整数。これがint hoursWorkedに代入される！*/
 			String type = allStaff.get(i).getClass().getSimpleName();
 			String name = item.getName();
 			

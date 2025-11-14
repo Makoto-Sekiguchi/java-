@@ -2,7 +2,7 @@ package Solid;
 
 public interface CalculateSalary {
 	
-	int CalcSalary(int hoursWorked);
+	int calcSalary(int hoursWorked);
 	String getName();
 		
 	
