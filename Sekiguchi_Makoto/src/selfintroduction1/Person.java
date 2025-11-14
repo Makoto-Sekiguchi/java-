@@ -15,7 +15,7 @@ public class Person {
 	
 	
 //Q3コンストラクタにfield keyと値をを代入		
-		this.name = name2;//２．受け取った値を代入し、(thisを忘れない！)
+		this.name/*Personクラスのnameという意味。*/ = name2;//２．受け取った値を代入し、(thisを忘れない！)
 		this.age = age2;
 		this.height = height2;
 		this.weight = weight2;
@@ -37,8 +37,9 @@ public class Person {
 	public double getBmi() {
 		return this.bmi = weight / (height * height);
 	}
-	void print() {
-		System.out.println("名前は" + this.name + "です。");
+	public void print() {
+		System.out.println("名前は" + getName()/*getName()が取得する値はthis.nameだから、
+		これでも問題ない！*/ + "です。");
 		System.out.println("年齢は" + this.age + "です。");
 		System.out.println("BMIは" + (int)this.bmi + "です。");//整数値への型変換はthisの直前に書く！this.～で一つの形！
 		System.out.println("人数の合計は1人です。");
