@@ -1,0 +1,10 @@
+Player:makoto (HP: 10, AK: 8, SP: 14)
+Demon:Demon (HP: 85, AK: 30, SP: 15)
+========================
+ターン1===
+Demonの攻撃！ makotoに31のダメージ。makoto残りHP:0
+============================
+Demonの勝利
+最終ステータス：
+Playere：makoto (HP: 0, AK: 8, SP: 14)
+最終ステータス：Demon (HP: 85, AK: 30, SP: 15)
