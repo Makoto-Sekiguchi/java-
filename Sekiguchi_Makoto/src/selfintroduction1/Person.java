@@ -12,15 +12,15 @@ public class Person {
 	
 
 //Q2コンストラクタの生成
-	public Person(String name2, int age2, double height2, double weight2, double bmi2) {//１．実引数を受け取り、
+	public Person(String name, int age, double height, double weight) {//１．実引数を受け取り、
 	
 	
 //Q3コンストラクタにfield keyと値をを代入		
-		this.name/*Personクラスのnameという意味。*/ = name2;//２．受け取った値を代入し、(thisを忘れない！)
-		this.age = age2;
-		this.height = height2;
-		this.weight = weight2;
-		this.bmi = weight / (height * height) ;
+		this.name/*Personクラスのnameという意味。*/ = name;//２．受け取った値を代入し、(thisを忘れない！)
+		this.age = age;
+		this.height = height;
+		this.weight = weight;
+		//this.bmi = weight / (height * height) ;
 		
 	}
 	
@@ -36,9 +36,7 @@ public class Person {
 	public double getWeight() {
 		return this.weight;
 	}
-	public double getBmi() {
-		return this.bmi;
-	}
+	
 	public void print() {
 		System.out.println("名前は" + getName()/*getName()が取得する値はthis.nameだから、
 		これでも問題ない！*/ + "です。");
@@ -46,7 +44,12 @@ public class Person {
 		System.out.println("BMIは" + (int)this.bmi + "です。");//整数値への型変換はthisの直前に書く！this.～で一つの形！
 		System.out.println("人数の合計は1人です。");
 	}
-
+	public void BMI() {
+		double bmi = 20.3;
+		bmi = weight / (height * height) ;
+		System.out.println(bmi);
+	}
+	
 	
 
 	
