@@ -1,4 +1,4 @@
-package Curriculum_D;
+package curriculum_D;
 
 //メインの処理、バトルロジック、ファイルの読み書き
 import java.io.BufferedReader;
@@ -13,16 +13,16 @@ public class MainBattle {
 	//テキストファイルからデーモンのステータスを読み込むメソッド
 	private static Character loadDemon(String filename) throws IOException {
 		String name = "Demon";
-		int HP = 0;
-		int AK = 0;
-		int SP = 0;
+		int hp = 10;
+		int ak = 20;
+		int sp = 30;
 
 		try (BufferedReader br = new BufferedReader(new FileReader("Demon_status.txt"))) {
 
 			name = br.readLine();
-			HP = Integer.parseInt(br.readLine().trim());
-			AK = Integer.parseInt(br.readLine().trim());
-			SP = Integer.parseInt(br.readLine().trim());
+			hp = Integer.parseInt(br.readLine().trim());
+			ak = Integer.parseInt(br.readLine().trim());
+			sp = Integer.parseInt(br.readLine().trim());
 
 		} catch (IOException e) {//ファイルが見つからないなどのエラー
 			System.out.println("ERRORステータスファイル読み込みエラー"/* + Demon_status.txt*/);
@@ -33,7 +33,7 @@ public class MainBattle {
 		}
 
 		//Characterクラスのコンストラクタを使ってDemonオブジェクトを生成
-		return new Character(name, HP, AK, SP);
+		return new Character(name, hp, ak, sp);
 
 	}
 
